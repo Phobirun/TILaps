@@ -47,6 +47,7 @@
     <style name="TextViewLayoutNameTilaps" parent="TextViewTilaps" >
         <item name="android:textSize">32sp</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 
