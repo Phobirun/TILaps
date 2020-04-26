@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TIlaps</string>
+    <string name="button_foto">Фото съемка</string>
+    <string name="button_video">Видео съемка</string>
+    <string name="button_video_foto">Видео на фото</string>
+    <string name="button_calculator">Калькулятор</string>
+    <string name="button_gallery">Галерея</string>
+    <string name="button_setting">Настройки</string>
+    <string name="button_info">Информация</string>
+
+</resources>

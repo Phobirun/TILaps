@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundloyout"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/TextViewLayoutNameTilaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:text="TiLaps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/t"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:clipChildren="true"
+                android:duration="0"
+                android:fillAfter="true"
+                android:fromDegrees="0"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    style="@style/TextViewLayoutNameTilaps"
+                    android:layout_width="400dp"
+                    android:layout_height="600dp"
+                    android:gravity="center"
+                    android:rotation="-90"
+                    android:text="TiLaps"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="100sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_gallery"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_gallery" />
+
+            <Button
+                android:id="@+id/button_foto"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_foto" />
+
+            <Button
+                android:id="@+id/button_foto_video"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_video_foto" />
+
+            <Button
+                android:id="@+id/button_info"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_info" />
+
+            <Button
+                android:id="@+id/button_calculator"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_calculator" />
+
+            <Button
+                android:id="@+id/button_video"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_video" />
+
+            <Button
+                android:id="@+id/button_setting"
+                style="@style/ButtonTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_setting" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        style="@style/TextViewTilaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Version 0.0.1"
+        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        style="@style/TextViewTilaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Copyright © 2020 Sergey Komissarov"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
