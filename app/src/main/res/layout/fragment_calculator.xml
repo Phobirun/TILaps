@@ -11,7 +11,7 @@
         style="@style/TextViewLayoutNameTilaps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Калькулятор" />
+        android:text="@string/Calculator" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     style="@style/TextViewHeaderTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Съемка" />
+                    android:text="@string/Shooting" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Интервал" />
+                        android:text="@string/interval" />
 
                     <EditText
                         android:id="@+id/editText24"
@@ -56,8 +56,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -66,23 +67,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="сек" />
+                        android:text="@string/second" />
 
                     <ImageButton
                         android:id="@+id/imageButton"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton2"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -97,7 +102,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Длительность" />
+                        android:text="@string/Lenght" />
 
                     <EditText
                         android:id="@+id/editText"
@@ -107,8 +112,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -117,23 +123,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="мин" />
+                        android:text="@string/minuts" />
 
                     <ImageButton
                         android:id="@+id/imageButton3"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton4"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,7 +158,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Кол-во \nКадров" />
+                        android:text="@string/quantity_frame" />
 
                     <EditText
                         android:id="@+id/editText2"
@@ -158,8 +168,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -167,24 +178,27 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="0.1"
-                        android:text=" " />
+                        android:layout_weight="0.1" />
 
                     <ImageButton
                         android:id="@+id/imageButton5"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        android:src="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton6"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -198,7 +212,7 @@
                     style="@style/TextViewHeaderTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Длительность" />
+                    android:text="@string/Lenght" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -212,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Частота \nкадров" />
+                        android:text="@string/frequenc_frame" />
 
                     <EditText
                         android:id="@+id/editText6"
@@ -222,8 +236,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView16"
@@ -232,23 +247,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="fps" />
+                        android:text="@string/fps" />
 
                     <ImageButton
                         android:id="@+id/imageButton27"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton28"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -263,7 +282,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Длительность" />
+                        android:text="@string/Lenght" />
 
                     <EditText
                         android:id="@+id/editText7"
@@ -273,8 +292,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:importantForAutofill="no" />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -283,23 +303,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="сек" />
+                        android:text="@string/second" />
 
                     <ImageButton
                         android:id="@+id/imageButton29"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton30"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -314,7 +338,7 @@
                     style="@style/TextViewHeaderTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Размер" />
+                    android:text="@string/size" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -328,7 +352,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Размер \nкадра" />
+                        android:text="@string/size_frame" />
 
                     <EditText
                         android:id="@+id/editText3"
@@ -338,8 +362,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -348,23 +373,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="мб" />
+                        android:text="@string/mb" />
 
                     <ImageButton
                         android:id="@+id/imageButton12"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton13"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -379,7 +408,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.3"
-                        android:text="Итоговый \nразмер" />
+                        android:text="@string/total_size" />
 
                     <EditText
                         android:id="@+id/editText4"
@@ -389,33 +418,38 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
                         android:ems="10"
-                        android:hint="0"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/nol"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/textView14"
+                        style="@style/TextViewTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        android:text="мб"
-                        style="@style/TextViewTilaps" />
+                        android:text="@string/mb" />
 
                     <ImageButton
                         android:id="@+id/imageButton23"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_down_float" />
+                        android:contentDescription="@string/down"
+                        app:srcCompat="@drawable/minus" />
 
                     <ImageButton
                         android:id="@+id/imageButton24"
+                        style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.1"
-                        app:srcCompat="@android:drawable/arrow_up_float" />
+                        android:contentDescription="@string/up"
+                        app:srcCompat="@drawable/plus" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -424,7 +458,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Режим"
+                android:text="@string/mode"
                 style="@style/TextViewHeaderTilaps" />
 
             <LinearLayout
@@ -438,7 +472,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="HDR" />
+                    android:text="@string/hdr" />
 
                 <CheckBox
                     android:id="@+id/checkBox3"
@@ -446,7 +480,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="SUPER" />
+                    android:text="@string/super_mode" />
 
                 <CheckBox
                     android:id="@+id/checkBox"
@@ -454,7 +488,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="MULTI" />
+                    android:text="@string/multi" />
             </LinearLayout>
 
             <LinearLayout
@@ -473,7 +507,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33333"
-                        android:text="RAW" />
+                        android:text="@string/raw" />
 
                     <RadioButton
                         android:id="@+id/radioButton7"
@@ -481,7 +515,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33333"
-                        android:text="RAW + JPG" />
+                        android:text="@string/raw_jpg" />
 
                     <RadioButton
                         android:id="@+id/radioButton6"
@@ -489,7 +523,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33333"
-                        android:text="JPG" />
+                        android:text="@string/jpg" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -498,7 +532,7 @@
                 style="@style/TextViewHeaderTilaps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Итоговый размер 54556 мб"
+                android:text="@string/total_size"
                 android:textAlignment="center" />
 
         </LinearLayout>

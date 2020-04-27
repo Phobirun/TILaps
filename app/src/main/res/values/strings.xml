@@ -7,5 +7,31 @@
     <string name="button_gallery">Галерея</string>
     <string name="button_setting">Настройки</string>
     <string name="button_info">Информация</string>
+    <string name="version">Version 0.0.1</string>
+    <string name="copyright">Copyright © 2020 Sergey Komissarov</string>
+    <string name="tilaps">TiLaps</string>
+    <string name="Calculator">Калькулятор</string>
+    <string name="Shooting">Съемка</string>
+    <string name="interval">Интервал</string>
+    <string name="nol">0</string>
+    <string name="second">сек</string>
+    <string name="minuts">мин</string>
+    <string name="fps">fps</string>
+    <string name="size">Размер</string>
+    <string name="mb">мб</string>
+    <string name="hdr">HDR</string>
+    <string name="super_mode">SUPER</string>
+    <string name="multi">MULTI</string>
+    <string name="raw">RAW</string>
+    <string name="raw_jpg">RAW + JPG</string>
+    <string name="jpg">JPG</string>
+    <string name="total_size">Итоговый размер</string>
+    <string name="Lenght">Длительность</string>
+    <string name="quantity_frame">Кол-во  Кадров</string>
+    <string name="frequenc_frame">Частота  кадров</string>
+    <string name="size_frame">Размер  кадра</string>
+    <string name="mode">Режим</string>
+    <string name="up">вверх</string>
+    <string name="down">вниз</string>
 
 </resources>
