@@ -41,6 +41,7 @@
 
     <style name="ButtonImageTilaps" parent="ButtonTilaps" >
         <item name="android:scaleType">fitCenter</item>
+        <item name="android:scaleType"></item>
         <item name="android:layout_margin">2dp</item>
         <item name="android:paddingBottom">1dp</item>
         <item name="android:padding">1dp</item>
@@ -57,6 +58,7 @@
     <style name="TextViewHeaderTilaps" parent="TextViewTilaps" >
         <item name="android:textSize">18sp</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingLeft">8dp</item>
     </style>
 
     <style name="TextViewLayoutNameTilaps" parent="TextViewTilaps" >
@@ -68,7 +70,8 @@
 
 
     <style name="CheckBoxTilaps" parent="TextViewTilaps" >
-        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:backgroundTint">@color/colorAccent</item>
+
     </style>
 
     <style name="RadioButtonTilaps" parent="TextViewTilaps" >
