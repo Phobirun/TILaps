@@ -23,13 +23,20 @@
     </style>
 
 
-    <style name="ButtonTilaps" parent="Widget.AppCompat.Button" >
-        <item name="android:textSize">20sp</item>
+    <style name="ButtonTilaps" parent="Widget.AppCompat.Button">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="enforceTextAppearance">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
         <item name="android:textColor">@color/text</item>
-        <item name="android:background">@color/backgroundColor</item>
-        <item name="android:layout_margin">10dp</item>
-
+        <item name="android:stateListAnimator">@animator/mtrl_btn_state_list_anim</item>
     </style>
+
+    <style name="ButtonTilapsMenu" parent="ButtonTilaps" >
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
 
     <style name="ButtonImageTilaps" parent="ButtonTilaps" >
         <item name="android:scaleType">fitCenter</item>
@@ -71,6 +78,11 @@
         <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SwitcTilaps" parent="TextViewTilaps" >
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
 
 
 

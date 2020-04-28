@@ -33,5 +33,8 @@
     <string name="mode">Режим</string>
     <string name="up">вверх</string>
     <string name="down">вниз</string>
+    <string name="setting">Настройки</string>
+    <string name="basic">Основные</string>
+    <string name="location">Геопозиция</string>
 
 </resources>

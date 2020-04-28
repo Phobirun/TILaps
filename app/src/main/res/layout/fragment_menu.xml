@@ -76,49 +76,49 @@
 
             <Button
                 android:id="@+id/button_gallery"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gallery" />
 
             <Button
                 android:id="@+id/button_foto"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_foto" />
 
             <Button
                 android:id="@+id/button_foto_video"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_video_foto" />
 
             <Button
                 android:id="@+id/button_info"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_info" />
 
             <Button
                 android:id="@+id/button_calculator"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_calculator" />
 
             <Button
                 android:id="@+id/button_video"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_video" />
 
             <Button
                 android:id="@+id/button_setting"
-                style="@style/ButtonTilaps"
+                style="@style/ButtonTilapsMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_setting" />
