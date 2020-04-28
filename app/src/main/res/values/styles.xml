@@ -29,6 +29,7 @@
         <item name="enforceTextAppearance">true</item>
         <item name="android:textAppearance">?attr/textAppearanceButton</item>
         <item name="android:textColor">@color/text</item>
+        <item name="android:backgroundTint">@color/backgroundColor</item>
         <item name="android:stateListAnimator">@animator/mtrl_btn_state_list_anim</item>
     </style>
 
