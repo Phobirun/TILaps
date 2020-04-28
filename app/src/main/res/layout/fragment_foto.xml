@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundloyout"
@@ -10,9 +11,7 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,41 +19,51 @@
 
         <ImageButton
             android:id="@+id/imageButton7"
+            style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.2"
+            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
             android:id="@+id/imageButton8"
+            style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.2"
+            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
             android:id="@+id/imageButton9"
+            style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.2"
+            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
             android:id="@+id/imageButton10"
+            style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.2"
+            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageButton
             android:id="@+id/imageButton11"
+            style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.2"
+            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher" />
     </LinearLayout>
@@ -63,8 +72,6 @@
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +102,9 @@
     <TextureView
         android:id="@+id/textureView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintDimensionRatio="18:10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -104,9 +113,8 @@
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textureView">
@@ -118,9 +126,11 @@
 
             <TextView
                 android:id="@+id/textView4"
+                style="@style/TextViewTilaps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textAlignment="center" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,26 +139,30 @@
 
                 <TextView
                     android:id="@+id/textView"
+                    style="@style/TextViewTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.1"
-                    android:text="2048" />
+                    android:layout_weight="0.15"
+                    android:text="50"
+                    android:textAlignment="center" />
 
                 <SeekBar
                     android:id="@+id/seekBar"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
+                    android:layout_weight="0.7"
                     android:max="100"
                     android:progress="3" />
 
                 <TextView
                     android:id="@+id/textView2"
+                    style="@style/TextViewTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.1"
-                    android:text="2048" />
+                    android:layout_weight="0.15"
+                    android:text="51260"
+                    android:textAlignment="center" />
             </LinearLayout>
 
             <RadioGroup
@@ -158,20 +172,12 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
-                    style="@style/RadioButtonTilaps"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.2"
-                    android:text="aa" />
-
-                <RadioButton
                     android:id="@+id/radioButton"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
-                    android:text="aa" />
+                    android:text="ISO" />
 
                 <RadioButton
                     android:id="@+id/radioButton5"
@@ -179,7 +185,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
-                    android:text="aa" />
+                    android:text="S" />
 
                 <RadioButton
                     android:id="@+id/radioButton4"
@@ -187,7 +193,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
-                    android:text="aa" />
+                    android:text="EV" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    style="@style/RadioButtonTilaps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="MF" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
@@ -195,7 +209,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
-                    android:text="aa" />
+                    android:text="WB" />
 
             </RadioGroup>
 
@@ -204,6 +218,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new Fragment_menu()).commit();
             activeFragmentVisible = new Fragment_menu();
            // getSupportFragmentManager().beginTransaction().replace(R.id.container,  new Fragment_foto()).commit();
-
         }
     }
 
