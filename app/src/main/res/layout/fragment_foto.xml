@@ -25,7 +25,7 @@
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/flash_disable" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -35,7 +35,7 @@
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/grid_false" />
 
         <ImageButton
             android:id="@+id/imageButton9"
@@ -45,7 +45,7 @@
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/timer_10" />
 
         <ImageButton
             android:id="@+id/imageButton10"
@@ -55,7 +55,7 @@
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/level_false" />
 
         <ImageButton
             android:id="@+id/imageButton11"
@@ -65,7 +65,7 @@
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@drawable/setting_false" />
     </LinearLayout>
 
     <LinearLayout
@@ -77,26 +77,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <ToggleButton
-            android:id="@+id/toggleButton3"
+        <Button
+            android:id="@+id/button4"
+            style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3333"
-            android:text="ToggleButton" />
+            android:layout_weight="0.33333"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:text="@string/super_mode" />
 
-        <ToggleButton
-            android:id="@+id/toggleButton4"
+        <Button
+            android:id="@+id/button3"
+            style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3333"
-            android:text="ToggleButton" />
+            android:layout_weight="0.33333"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:text="@string/multi"
+            android:textColor="@color/colorAccent" />
 
-        <ToggleButton
-            android:id="@+id/toggleButton5"
+        <Button
+            android:id="@+id/button2"
+            style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3333"
-            android:text="ToggleButton" />
+            android:layout_weight="0.33333"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:text="@string/hdr" />
     </LinearLayout>
 
     <TextureView
@@ -129,7 +139,7 @@
                 style="@style/TextViewTilaps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/nol"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -143,7 +153,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.15"
-                    android:text="50"
+                    android:text="@string/nol"
                     android:textAlignment="center" />
 
                 <SeekBar
@@ -152,7 +162,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.7"
-                    android:max="100"
+                    android:max="6"
                     android:progress="3" />
 
                 <TextView
@@ -161,7 +171,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.15"
-                    android:text="51260"
+                    android:text="@string/nol"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -233,7 +243,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.3333"
-            app:srcCompat="@drawable/plus" />
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/camera_icon_1" />
 
         <ImageButton
             android:id="@+id/imageButton15"
@@ -241,7 +252,8 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="0.3333"
-            app:srcCompat="@drawable/plus" />
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/shot_stop" />
 
         <LinearLayout
             android:id="@+id/linearLayout5"
@@ -261,16 +273,22 @@
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/minus" />
+                    android:background="#00FFFFFF"
+                    android:padding="0dp"
+                    app:srcCompat="@drawable/lock_opened_iso" />
 
                 <ImageButton
                     android:id="@+id/imageButton18"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/plus" />
+                    android:background="#00FFFFFF"
+                    android:padding="0dp"
+                    app:srcCompat="@drawable/lock_closed_s" />
             </LinearLayout>
 
             <LinearLayout
@@ -284,16 +302,22 @@
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/minus" />
+                    android:background="#00FFFFFF"
+                    android:padding="0dp"
+                    app:srcCompat="@drawable/lock_closed_mf" />
 
                 <ImageButton
                     android:id="@+id/imageButton19"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/plus" />
+                    android:background="#00FFFFFF"
+                    android:padding="0dp"
+                    app:srcCompat="@drawable/lock_closed_wb" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -302,6 +326,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -314,7 +339,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3333"
-            android:text="7"
+            android:text="@string/nol"
             android:textAlignment="center" />
 
         <TextView
@@ -324,7 +349,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3333"
-            android:text="456789"
+            android:text="5678"
             android:textAlignment="center" />
 
         <TextView
@@ -334,7 +359,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3333"
-            android:text="ijnjd 8900\n okokkf 92\n kjkd 444"
+            android:text="@string/nol"
             android:textAlignment="center" />
     </LinearLayout>
 

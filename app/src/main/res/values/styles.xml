@@ -31,6 +31,8 @@
         <item name="android:textColor">@color/text</item>
         <item name="android:backgroundTint">@color/backgroundColor</item>
         <item name="android:stateListAnimator">@animator/mtrl_btn_state_list_anim</item>
+        <item name="android:scaleType">fitCenter</item>
+
     </style>
 
     <style name="ButtonTilapsMenu" parent="ButtonTilaps" >
@@ -39,9 +41,7 @@
     </style>
 
 
-    <style name="ButtonImageTilaps" parent="ButtonTilaps" >
-        <item name="android:scaleType">fitCenter</item>
-        <item name="android:scaleType"></item>
+    <style name="ButtonImageTilaps" parent="ButtonTilaps">
         <item name="android:layout_margin">2dp</item>
         <item name="android:paddingBottom">1dp</item>
         <item name="android:padding">1dp</item>
