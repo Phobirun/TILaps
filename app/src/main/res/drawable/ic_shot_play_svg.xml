@@ -1,0 +1,11 @@
+<vector android:autoMirrored="true" android:height="5000dp"
+    android:viewportHeight="5000" android:viewportWidth="5000"
+    android:width="5000dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/backgroundloyout" android:pathData="M2500,2500m-3535.53,0a3535.53,3535.53 0,1 1,7071.06 0a3535.53,3535.53 0,1 1,-7071.06 0"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M2485.12,1508.45 L3512,2249.5c-140.34,386 -278.92,767.22 -417.83,1149.29H1890.63c-116,-379.06 -232.74,-760.52 -351.67,-1149.17Z"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M2656,1375.33l867.6,-677C4249.77,1153.23 4598.41,1809.18 4565,2679.08 3900.51,2279.32 3278.87,1833.72 2656,1375.33Z"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M968.55,1120.34c234.11,759.79 467.37,1516.83 701.62,2277.1H648.44C272.11,2689.36 388.94,1730.34 968.55,1120.34Z"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M3302.63,593.91c-306.59,242.25 -609.35,481.94 -912.63,721 -302.17,238.15 -604.84,475.65 -916.88,721L1138.38,953.63C1609.12,483.37 2518,253.93 3302.63,593.91Z"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M2962,4505.56c207.94,-722.16 462.37,-1424.39 727.62,-2129.89l840.48,540.08C4324.09,3893.39 3505.39,4417.54 2962,4505.56Z"/>
+    <path android:fillColor="@color/colorAccent" android:pathData="M3027.36,3612.7l-299,942.78c-876.56,114 -1653.41,-408.84 -1956.8,-942.78Z"/>
+</vector>
