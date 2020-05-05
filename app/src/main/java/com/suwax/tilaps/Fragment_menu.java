@@ -25,7 +25,7 @@ public class Fragment_menu extends Fragment {
         foto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_foto());
+                ChangingFragment(new Fragment_foto());
             }
         });
 
@@ -33,7 +33,7 @@ public class Fragment_menu extends Fragment {
         video.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_video());
+                ChangingFragment(new Fragment_video());
             }
         });
 
@@ -41,7 +41,7 @@ public class Fragment_menu extends Fragment {
         foto_video.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_foto_video());
+                ChangingFragment(new Fragment_foto_video());
             }
         });
 
@@ -49,7 +49,7 @@ public class Fragment_menu extends Fragment {
         gallery.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_gallery());
+                ChangingFragment(new Fragment_gallery());
             }
         });
 
@@ -57,7 +57,7 @@ public class Fragment_menu extends Fragment {
         calculator.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_calculator());
+                ChangingFragment(new Fragment_calculator());
             }
         });
 
@@ -65,7 +65,7 @@ public class Fragment_menu extends Fragment {
         setting.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_setting());
+                ChangingFragment(new Fragment_setting());
             }
         });
 
@@ -73,7 +73,7 @@ public class Fragment_menu extends Fragment {
         info.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Обработка нажатия
-                but(new Fragment_info());
+                ChangingFragment(new Fragment_info());
             }
         });
 
@@ -84,7 +84,7 @@ public class Fragment_menu extends Fragment {
         return fragment;//возврат фрагмента
     }
 
-    public void but(Object o){
+    public void ChangingFragment(Object o){
         ((MainActivity)getActivity()).fragmentActivityReplace(o);
     }
 

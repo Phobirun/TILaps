@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout_top_element"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
@@ -64,16 +64,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/linearLayout_top_mode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_top_element">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button_super"
             style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -83,18 +83,17 @@
             android:text="@string/super_mode" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button_multi"
             style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333"
             android:background="#00FFFFFF"
             android:backgroundTintMode="src_in"
-            android:text="@string/multi"
-            android:textColor="@color/colorAccent" />
+            android:text="@string/multi" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_hdr"
             style="@style/ButtonTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -108,18 +107,18 @@
         android:id="@+id/textureView"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_down_mode"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_top_mode" />
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout_down_mode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_down_element"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textureView">
@@ -130,7 +129,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView_center"
                 style="@style/TextViewTilaps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,7 +142,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView_left"
                     style="@style/TextViewTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -157,11 +156,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.7"
-                    android:max="6"
-                    android:progress="3" />
+                    android:max="8"
+                    android:progress="0" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_right"
                     style="@style/TextViewTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -171,13 +170,14 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/radioButton_iso"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -185,7 +185,7 @@
                     android:text="ISO" />
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/radioButton_s"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                     android:text="S" />
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/radioButton_ev"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
                     android:text="EV" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/radioButton_mf"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -209,7 +209,7 @@
                     android:text="MF" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/radioButton_wb"
                     style="@style/RadioButtonTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -223,14 +223,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout_down_element"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_down_mode">
 
         <ImageButton
             android:id="@+id/imageButton_number_camera"
@@ -249,7 +249,7 @@
             app:srcCompat="@drawable/ic_shot_stop_svg" />
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
+            android:id="@+id/linearLayout_lock"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="0.3333"
@@ -312,6 +312,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -319,10 +320,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_down_mode">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView_down_left"
             style="@style/TextViewHeaderTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -332,17 +333,17 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/textView_down_center"
             style="@style/TextViewHeaderTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3333"
-            android:text="5678"
+            android:text="    "
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/textView_down_right"
             style="@style/TextViewHeaderTilaps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

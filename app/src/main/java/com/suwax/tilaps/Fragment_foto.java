@@ -1,30 +1,31 @@
 package com.suwax.tilaps;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 
 import android.content.res.AssetFileDescriptor;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Fragment_foto extends Fragment implements TextureView.SurfaceTextureListener {
@@ -49,7 +50,10 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private int int_lock_wb = 0;
     private int int_lock_s = 0;
     private int int_lock_mf = 0;
-    //
+    private int int_super = 0;
+    private int int_multi = 0;
+    private int int_hdr = 0;
+
 
     //components
     private ImageButton imageButton_shot;
@@ -64,9 +68,61 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private ImageButton imageButton_lock_wb;
     private ImageButton imageButton_lock_s;
 
-    //
+    private LinearLayout linearLayout_top_element;
+    private LinearLayout linearLayout_top_mode;
+    private LinearLayout linearLayout_down_mode;
+    private LinearLayout linearLayout_lock;
+    private LinearLayout linearLayout_text;
+
+    private Button button_super;
+    private Button button_multi;
+    private Button button_hdr;
+
+    private RadioButton radioButton_iso;
+    private RadioButton radioButton_s;
+    private RadioButton radioButton_ev;
+    private RadioButton radioButton_mf;
+    private RadioButton radioButton_wb;
+    private RadioGroup radioGroup;
+
+    private TextView textView_center;
+    private TextView textView_left;
+    private TextView textView_right;
+    private TextView textView_down_left;
+    private TextView textView_down_right;
+
+    private SeekBar seekBar;
+
+    //seekbar_component
+    private int seekbar_iso_max = 10;
+    private int seekbar_iso_select = 0;
+    private ArrayList<String> seekbar_iso_value = new ArrayList<>();
+
+    private int seekbar_s_max = 10;
+    private int seekbar_s_select = 0;
+    private ArrayList<String> seekbar_s_value = new ArrayList<>();
+
+    private int seekbar_ev_max = 10;
+    private int seekbar_ev_select = 0;
+    private ArrayList<String> seekbar_ev_value = new ArrayList<>();
+
+    private int seekbar_mf_max = 10;
+    private int seekbar_mf_select = 0;
+    private ArrayList<String> seekbar_mf_value = new ArrayList<>();
+
+    private int seekbar_wb_max = 10;
+    private int seekbar_wb_select = 0;
+    private ArrayList<String> seekbar_wb_value = new ArrayList<>();
+
+
+
+
+
+
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        GetParametrsForCamera();
+
         fragment = inflater.inflate(R.layout.fragment_foto,container,false);
 
         imageButton_shot = fragment.findViewById(R.id.imageButton_shot);
@@ -102,7 +158,65 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         imageButton_lock_s = fragment.findViewById(R.id.imageButton_lock_s);
         imageButton_lock_s.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onImageButtonClickLockS(); } });
 
+        linearLayout_top_element = fragment.findViewById(R.id.linearLayout_top_element);
+        linearLayout_top_mode = fragment.findViewById(R.id.linearLayout_top_mode);
+        linearLayout_down_mode = fragment.findViewById(R.id.linearLayout_down_mode);
+        linearLayout_lock = fragment.findViewById(R.id.linearLayout_lock);
+        linearLayout_text = fragment.findViewById(R.id.linearLayout_text);
 
+
+
+        button_super = fragment.findViewById(R.id.button_super);
+        button_super.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onButtonClickSuper(); } });
+        button_super.setEnabled(false);//not implemented
+
+        button_multi = fragment.findViewById(R.id.button_multi);
+        button_multi.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onButtonClickMulti(); } });
+        button_multi.setEnabled(false);//not implemented
+
+        button_hdr = fragment.findViewById(R.id.button_hdr);
+        button_hdr.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onButtonClickHdr(); } });
+        button_hdr.setEnabled(false);//not implemented
+
+        radioButton_iso = fragment.findViewById(R.id.radioButton_iso);
+        radioButton_s = fragment.findViewById(R.id.radioButton_s);
+        radioButton_ev = fragment.findViewById(R.id.radioButton_ev);
+        radioButton_mf = fragment.findViewById(R.id.radioButton_mf);
+        radioButton_wb = fragment.findViewById(R.id.radioButton_wb);
+        radioGroup = fragment.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                onClickRadioButton();
+            }
+        });
+
+
+
+        textView_center = fragment.findViewById(R.id.textView_center);
+        textView_left = fragment.findViewById(R.id.textView_left);
+        textView_right = fragment.findViewById(R.id.textView_right);
+        textView_down_left = fragment.findViewById(R.id.textView_down_left);
+        textView_down_right = fragment.findViewById(R.id.textView_down_right);
+
+        textView_left.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onClickTextViewSeekBar(-1); } });
+        textView_right.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onClickTextViewSeekBar(1); } });
+
+        seekBar = fragment.findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                onSeekBarProgressChanged();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+
+        radioButton_iso.setChecked(true);
 
         mTextureView = (TextureView) fragment.findViewById(R.id.textureView);
         mTextureView.setSurfaceTextureListener(this);
@@ -121,9 +235,29 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         if(int_shot == 0){
             imageButton_shot.setImageResource(R.drawable.ic_shot_play_svg);
             int_shot = 1;
+
+            linearLayout_top_element.setVisibility(View.INVISIBLE);
+            linearLayout_top_mode.setVisibility(View.INVISIBLE);
+            linearLayout_down_mode.setVisibility(View.INVISIBLE);
+            linearLayout_lock.setVisibility(View.INVISIBLE);
+            linearLayout_text.setVisibility(View.VISIBLE);
+            imageButton_number_camera.setVisibility(View.INVISIBLE);
+
+            textView_down_left.setText("iso: "+seekbar_iso_value.get(seekbar_iso_select)+ "\ns: "+seekbar_s_value.get(seekbar_s_select)+ "\nwb: "+seekbar_mf_value.get(seekbar_mf_select)+ "\nwb: "+seekbar_wb_value.get(seekbar_wb_select));
+            textView_down_right.setText("сделанно: \n34540\nосталось: \n345678");
+
         }else{
             imageButton_shot.setImageResource(R.drawable.ic_shot_stop_svg);
             int_shot = 0;
+
+            linearLayout_top_element.setVisibility(View.VISIBLE);
+            linearLayout_top_mode.setVisibility(View.VISIBLE);
+            linearLayout_down_mode.setVisibility(View.VISIBLE);
+            linearLayout_lock.setVisibility(View.VISIBLE);
+            linearLayout_text.setVisibility(View.INVISIBLE);
+            imageButton_number_camera.setVisibility(View.VISIBLE);
+
+
         }
     }
 
@@ -189,6 +323,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         if(int_setting == 0){
             imageButton_setting.setImageResource(R.drawable.ic_setting_true_svg);
             int_setting = 1;
+            ChangingFragment(new Fragment_foto_setting());
         }else{
             imageButton_setting.setImageResource(R.drawable.ic_setting_false_svg);
             int_setting = 0;
@@ -268,6 +403,148 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         }
     }
 
+    public void onButtonClickSuper()
+    {
+        if(int_super == 0){
+            button_super.setTextColor(getResources().getColor(R.color.colorAccent));
+            int_super = 1;
+        }else{
+            button_super.setTextColor(getResources().getColor(R.color.text));
+            int_super = 0;
+        }
+    }
+
+    public void onButtonClickMulti()
+    {
+        if(int_multi == 0){
+            button_multi.setTextColor(getResources().getColor(R.color.colorAccent));
+            int_multi = 1;
+        }else{
+            button_multi.setTextColor(getResources().getColor(R.color.text));
+            int_multi = 0;
+        }
+    }
+
+    public void onButtonClickHdr()
+    {
+        if(int_hdr == 0){
+            button_hdr.setTextColor(getResources().getColor(R.color.colorAccent));
+            int_hdr = 1;
+        }else{
+            button_hdr.setTextColor(getResources().getColor(R.color.text));
+            int_hdr = 0;
+        }
+    }
+
+    public void onClickTextViewSeekBar(int step){
+        Log.v("text","error");
+        if(seekBar.getProgress() == seekBar.getMax()){
+            if(step<0){
+                seekBar.setProgress(seekBar.getProgress()+step);
+            }
+        } else if (seekBar.getProgress() == 0){
+            if(step>0){
+                seekBar.setProgress(seekBar.getProgress()+step);
+            }
+        } else{
+            seekBar.setProgress(seekBar.getProgress()+step);
+        }
+    }
+
+
+    public void onSeekBarProgressChanged(){
+        if(radioButton_iso.isChecked()){
+            seekbar_iso_select = seekBar.getProgress();
+            textView_center.setText(String.valueOf("ISO: "+ (seekbar_iso_value.get(seekbar_iso_select))));
+        }else if(radioButton_s.isChecked()){
+            seekbar_s_select = seekBar.getProgress();
+            textView_center.setText(String.valueOf("s: "+ (seekbar_s_value.get(seekbar_s_select))));
+        }else if(radioButton_ev.isChecked()){
+            seekbar_ev_select = seekBar.getProgress();
+            textView_center.setText(String.valueOf("ev: "+ (seekbar_ev_value.get(seekbar_ev_select))));
+        }else if(radioButton_mf.isChecked()){
+            seekbar_mf_select = seekBar.getProgress();
+            textView_center.setText(String.valueOf("mf: "+ (seekbar_mf_value.get(seekbar_mf_select))));
+        }else if(radioButton_wb.isChecked()){
+            seekbar_wb_select = seekBar.getProgress();
+            textView_center.setText(String.valueOf("wb: "+ (seekbar_wb_value.get(seekbar_wb_select))));
+        }
+    }
+
+    private void GetParametrsForCamera(){
+        seekbar_iso_value.add("q");
+        seekbar_iso_value.add("w");
+        seekbar_iso_value.add("e");
+        seekbar_iso_value.add("r");
+        seekbar_iso_value.add("t");
+        seekbar_iso_max = seekbar_iso_value.size()-1;
+
+        seekbar_s_value.add("a");
+        seekbar_s_value.add("s");
+        seekbar_s_value.add("d");
+        seekbar_s_value.add("f");
+        seekbar_s_value.add("g");
+        seekbar_s_value.add("c");
+        seekbar_s_max = seekbar_s_value.size()-1;
+
+        seekbar_ev_value.add("z");
+        seekbar_ev_value.add("x");
+        seekbar_ev_value.add("v");
+        seekbar_ev_value.add("b");
+        seekbar_ev_max = seekbar_ev_value.size()-1;
+
+        seekbar_mf_value.add("/");
+        seekbar_mf_value.add(".");
+        seekbar_mf_value.add(",");
+        seekbar_mf_max = seekbar_mf_value.size()-1;
+
+        seekbar_wb_value.add("'");
+        seekbar_wb_value.add(";");
+        seekbar_wb_value.add("l");
+        seekbar_wb_value.add("k");
+        seekbar_wb_value.add("j");
+        seekbar_wb_value.add("m");
+        seekbar_wb_value.add("n");
+        seekbar_wb_max = seekbar_wb_value.size()-1;
+
+
+
+    }
+
+    public void onClickRadioButton(){
+        if(radioButton_iso.isChecked()){
+            textView_left.setText(seekbar_iso_value.get(0)+"");
+            textView_right.setText(seekbar_iso_value.get(seekbar_iso_value.size()-1)+"");
+            seekBar.setMax(seekbar_iso_max);
+            seekBar.setProgress(seekbar_iso_select);
+            textView_center.setText(String.valueOf("ISO: "+ (seekbar_iso_value.get(seekbar_iso_select))));
+        }else if(radioButton_s.isChecked()){
+            textView_left.setText(seekbar_s_value.get(0)+"");
+            textView_right.setText(seekbar_s_value.get(seekbar_s_value.size()-1)+"");
+            seekBar.setMax(seekbar_s_max);
+            seekBar.setProgress(seekbar_s_select);
+            textView_center.setText(String.valueOf("s: "+ (seekbar_s_value.get(seekbar_s_select))));
+        }else if(radioButton_ev.isChecked()){
+            textView_left.setText(seekbar_ev_value.get(0)+"");
+            textView_right.setText(seekbar_ev_value.get(seekbar_ev_value.size()-1)+"");
+            seekBar.setMax(seekbar_ev_max);
+            seekBar.setProgress(seekbar_ev_select);
+            textView_center.setText(String.valueOf("ev: "+ (seekbar_ev_value.get(seekbar_ev_select))));
+        }else if(radioButton_mf.isChecked()){
+            textView_left.setText(seekbar_mf_value.get(0)+"");
+            textView_right.setText(seekbar_mf_value.get(seekbar_mf_value.size()-1)+"");
+            seekBar.setMax(seekbar_mf_max);
+            seekBar.setProgress(seekbar_mf_select);
+            textView_center.setText(String.valueOf("mf: "+ (seekbar_mf_value.get(seekbar_mf_select))));
+        }else if(radioButton_wb.isChecked()){
+            textView_left.setText(seekbar_wb_value.get(0)+"");
+            textView_right.setText(seekbar_wb_value.get(seekbar_wb_value.size()-1)+"");
+            seekBar.setMax(seekbar_wb_max);
+            seekBar.setProgress(seekbar_wb_select);
+            textView_center.setText(String.valueOf("wb: "+ (seekbar_wb_value.get(seekbar_wb_select))));
+        }
+    }
+
 
 
 
@@ -313,6 +590,10 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
 
+    }
+
+    public void ChangingFragment(Object o){
+        ((MainActivity)getActivity()).fragmentActivityReplace(o);
     }
 
 }
