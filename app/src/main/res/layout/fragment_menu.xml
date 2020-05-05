@@ -58,6 +58,7 @@
                     style="@style/TextViewLayoutNameTilaps"
                     android:layout_width="400dp"
                     android:layout_height="600dp"
+                    android:fontFamily="@font/aaps"
                     android:gravity="center"
                     android:rotation="-90"
                     android:text="@string/tilaps"

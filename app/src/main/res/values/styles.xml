@@ -45,6 +45,7 @@
         <item name="android:layout_margin">2dp</item>
         <item name="android:paddingBottom">1dp</item>
         <item name="android:padding">1dp</item>
+        <item name="android:background">#00000000</item>
     </style>
 
 
@@ -64,7 +65,6 @@
     <style name="TextViewLayoutNameTilaps" parent="TextViewTilaps" >
         <item name="android:textSize">30sp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:layout_marginBottom">15dp</item>
     </style>
 

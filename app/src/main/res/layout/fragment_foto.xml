@@ -18,52 +18,47 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/imageButton_flash"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_flash_full_svg" />
+            app:srcCompat="@drawable/ic_flash_disable_svg" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/imageButton_grid"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_grid_false_svg" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/imageButton_timer"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_timer_10_svg" />
+            app:srcCompat="@drawable/ic_timer_0_svg" />
 
         <ImageButton
-            android:id="@+id/imageButton10"
+            android:id="@+id/imageButton_level"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_level_true_svg" />
+            app:srcCompat="@drawable/ic_level_false_svg" />
 
         <ImageButton
-            android:id="@+id/imageButton11"
+            android:id="@+id/imageButton_setting"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_setting_false_svg" />
     </LinearLayout>
@@ -238,21 +233,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ImageButton
-            android:id="@+id/imageButton14"
+            android:id="@+id/imageButton_number_camera"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.3333"
-            android:background="#00FFFFFF"
             app:srcCompat="@drawable/ic_camera_icon_1_svg" />
 
         <ImageButton
-            android:id="@+id/imageButton15"
+            android:id="@+id/imageButton_shot"
             style="@style/ButtonImageTilaps"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="0.3333"
-            android:background="#00FFFFFF"
             app:srcCompat="@drawable/ic_shot_stop_svg" />
 
         <LinearLayout
@@ -269,26 +262,24 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton16"
+                    android:id="@+id/imageButton_lock_iso"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:background="#00FFFFFF"
                     android:padding="0dp"
                     app:srcCompat="@drawable/ic_lock_opened_iso_svg" />
 
                 <ImageButton
-                    android:id="@+id/imageButton18"
+                    android:id="@+id/imageButton_lock_s"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:background="#00FFFFFF"
                     android:padding="0dp"
-                    app:srcCompat="@drawable/ic_lock_closed_s_svg" />
+                    app:srcCompat="@drawable/ic_lock_opened_s_svg" />
             </LinearLayout>
 
             <LinearLayout
@@ -298,26 +289,24 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton17"
+                    android:id="@+id/imageButton_lock_mf"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:background="#00FFFFFF"
                     android:padding="0dp"
-                    app:srcCompat="@drawable/ic_lock_closed_mf_svg" />
+                    app:srcCompat="@drawable/ic_lock_opened_mf_svg" />
 
                 <ImageButton
-                    android:id="@+id/imageButton19"
+                    android:id="@+id/imageButton_lock_wb"
                     style="@style/ButtonImageTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:background="#00FFFFFF"
                     android:padding="0dp"
-                    app:srcCompat="@drawable/ic_lock_closed_wb_svg" />
+                    app:srcCompat="@drawable/ic_lock_opened_wb_svg" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
