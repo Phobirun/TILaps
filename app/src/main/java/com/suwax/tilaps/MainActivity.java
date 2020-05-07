@@ -1,8 +1,13 @@
 package com.suwax.tilaps;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,22 +23,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new Fragment_menu()).commit();
             activeFragmentVisible = new Fragment_menu();
-           // getSupportFragmentManager().beginTransaction().replace(R.id.container,  new Fragment_foto()).commit();
+        }
+        //getting camera permissions
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
+                (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        )
+        {
+            requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
     }
 
 
-    //метод смены фрагментов
+    //changing fragments
     public void fragmentActivityReplace(Object o){
 
         if(o.getClass().isInstance(new Fragment_foto())){
+
             getSupportFragmentManager().beginTransaction().replace(R.id.container,  new Fragment_foto()).commit();
             activeFragmentVisible = new Fragment_foto();
         }

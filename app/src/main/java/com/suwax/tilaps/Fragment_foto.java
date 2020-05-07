@@ -1,6 +1,8 @@
 package com.suwax.tilaps;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +27,6 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Fragment_foto extends Fragment implements TextureView.SurfaceTextureListener {
@@ -114,7 +115,30 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private int seekbar_wb_select = 0;
     private ArrayList<String> seekbar_wb_value = new ArrayList<>();
 
+    private CameraServiceAdapter cameraService = new CameraServiceAdapter();
 
+
+    private HandlerThread mBackgroundThread;
+    private Handler mBackgroundHandler = null;
+
+
+
+    private void startBackgroundThread() {
+        mBackgroundThread = new HandlerThread("CameraBackground");
+        mBackgroundThread.start();
+        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
+    }
+
+    private void stopBackgroundThread() {
+        mBackgroundThread.quitSafely();
+        try {
+            mBackgroundThread.join();
+            mBackgroundThread = null;
+            mBackgroundHandler = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -223,6 +247,8 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
 
 
 
+        cameraService.startBackgroundThread();
+        cameraService.onCreate(getActivity(), mTextureView);
 
 
         return fragment;
@@ -230,8 +256,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     }
 
 
-    public void onImageButtonClickShot()
-    {
+    public void onImageButtonClickShot(){
         if(int_shot == 0){
             imageButton_shot.setImageResource(R.drawable.ic_shot_play_svg);
             int_shot = 1;
@@ -245,7 +270,11 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
 
             textView_down_left.setText("iso: "+seekbar_iso_value.get(seekbar_iso_select)+ "\ns: "+seekbar_s_value.get(seekbar_s_select)+ "\nwb: "+seekbar_mf_value.get(seekbar_mf_select)+ "\nwb: "+seekbar_wb_value.get(seekbar_wb_select));
             textView_down_right.setText("сделанно: \n34540\nосталось: \n345678");
+            for(int i = 0; i<10;i++) {
+                cameraService.ShotCamera(int_number_camera);
 
+
+            }
         }else{
             imageButton_shot.setImageResource(R.drawable.ic_shot_stop_svg);
             int_shot = 0;
@@ -357,6 +386,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
             imageButton_number_camera.setImageResource(R.drawable.ic_camera_icon_1_svg);
             int_number_camera = 0;
         }
+        cameraService.ChangingCamera(int_number_camera);
     }
 
     public void onImageButtonClickLockIso()
@@ -555,7 +585,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i1) {
         Surface surface = new Surface(surfaceTexture);
-
+/*
         try {
             AssetFileDescriptor afd = getActivity().getAssets().openFd(FILE_NAME);
             mMediaPlayer = new MediaPlayer();
@@ -575,7 +605,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
 
         } catch (IOException e) {
             Log.d(TAG, e.getMessage());
-        }
+        }*/
     }
 
     @Override

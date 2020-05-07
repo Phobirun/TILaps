@@ -35,12 +35,13 @@
                     android:text="@string/Shooting" />
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_interval"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox4"
+                        android:id="@+id/checkBox_interval"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -49,16 +50,16 @@
                         android:text="@string/interval" />
 
                     <EditText
-                        android:id="@+id/editText24"
+                        android:id="@+id/editText_interval"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -70,7 +71,7 @@
                         android:text="@string/second" />
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/imageButton_interval_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -80,7 +81,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/imageButton_interval_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -91,12 +92,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_lenght"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox5"
+                        android:id="@+id/checkBox_lenght"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -105,16 +107,16 @@
                         android:text="@string/Lenght" />
 
                     <EditText
-                        android:id="@+id/editText"
+                        android:id="@+id/editText_lenght"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -126,7 +128,7 @@
                         android:text="@string/minuts" />
 
                     <ImageButton
-                        android:id="@+id/imageButton3"
+                        android:id="@+id/imageButton_lenght_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -136,7 +138,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton4"
+                        android:id="@+id/imageButton_lenght_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -147,12 +149,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_quantity"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox6"
+                        android:id="@+id/checkBox_quantity"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -161,16 +164,16 @@
                         android:text="@string/quantity_frame" />
 
                     <EditText
-                        android:id="@+id/editText2"
+                        android:id="@+id/editText_quantity"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -181,7 +184,7 @@
                         android:layout_weight="0.1" />
 
                     <ImageButton
-                        android:id="@+id/imageButton5"
+                        android:id="@+id/imageButton_quantity_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -191,7 +194,7 @@
                         android:src="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton6"
+                        android:id="@+id/imageButton_quantity_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -212,15 +215,16 @@
                     style="@style/TextViewHeaderTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Lenght" />
+                    android:text="@string/video" />
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_frequency"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox10"
+                        android:id="@+id/checkBox_frequency"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -229,16 +233,16 @@
                         android:text="@string/frequenc_frame" />
 
                     <EditText
-                        android:id="@+id/editText6"
+                        android:id="@+id/editText_frequency"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView16"
@@ -250,7 +254,7 @@
                         android:text="@string/fps" />
 
                     <ImageButton
-                        android:id="@+id/imageButton27"
+                        android:id="@+id/imageButton_frequency_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -260,7 +264,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton28"
+                        android:id="@+id/imageButton_frequency_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -271,12 +275,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_duration"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox11"
+                        android:id="@+id/checkBox_duration"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -285,7 +290,7 @@
                         android:text="@string/Lenght" />
 
                     <EditText
-                        android:id="@+id/editText7"
+                        android:id="@+id/editText_duration"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -293,8 +298,8 @@
                         android:layout_weight="0.4"
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:importantForAutofill="no" />
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -306,7 +311,7 @@
                         android:text="@string/second" />
 
                     <ImageButton
-                        android:id="@+id/imageButton29"
+                        android:id="@+id/imageButton_duration_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -316,7 +321,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton30"
+                        android:id="@+id/imageButton_duration_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -341,12 +346,13 @@
                     android:text="@string/size" />
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_size"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox7"
+                        android:id="@+id/checkBox_size"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -355,16 +361,16 @@
                         android:text="@string/size_frame" />
 
                     <EditText
-                        android:id="@+id/editText3"
+                        android:id="@+id/editText_size"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -376,7 +382,7 @@
                         android:text="@string/mb" />
 
                     <ImageButton
-                        android:id="@+id/imageButton12"
+                        android:id="@+id/imageButton_size_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -386,7 +392,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton13"
+                        android:id="@+id/imageButton_size_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -397,12 +403,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linerLayout_amount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox8"
+                        android:id="@+id/checkBox_amount"
                         style="@style/CheckBoxTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -411,16 +418,16 @@
                         android:text="@string/total_size" />
 
                     <EditText
-                        android:id="@+id/editText4"
+                        android:id="@+id/editText_amount"
                         style="@style/EditTextTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.4"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/nol"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="numberDecimal" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -432,7 +439,7 @@
                         android:text="@string/mb" />
 
                     <ImageButton
-                        android:id="@+id/imageButton23"
+                        android:id="@+id/imageButton_amount_minus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -442,7 +449,7 @@
                         app:srcCompat="@drawable/ic_minus_svg" />
 
                     <ImageButton
-                        android:id="@+id/imageButton24"
+                        android:id="@+id/imageButton_amount_plus"
                         style="@style/ButtonImageTilaps"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -467,7 +474,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/checkBox_hdr"
                     style="@style/CheckBoxTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -475,7 +482,7 @@
                     android:text="@string/hdr" />
 
                 <CheckBox
-                    android:id="@+id/checkBox3"
+                    android:id="@+id/checkBox_super"
                     style="@style/CheckBoxTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -483,7 +490,7 @@
                     android:text="@string/super_mode" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/checkBox_multi"
                     style="@style/CheckBoxTilaps"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -502,7 +509,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton8"
+                        android:id="@+id/radioButton_raw"
                         style="@style/RadioButtonTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -510,7 +517,7 @@
                         android:text="@string/raw" />
 
                     <RadioButton
-                        android:id="@+id/radioButton7"
+                        android:id="@+id/radioButton_raw_jpg"
                         style="@style/RadioButtonTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -518,7 +525,7 @@
                         android:text="@string/raw_jpg" />
 
                     <RadioButton
-                        android:id="@+id/radioButton6"
+                        android:id="@+id/radioButton_jpg"
                         style="@style/RadioButtonTilaps"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -528,7 +535,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/textView_size"
                 style="@style/TextViewHeaderTilaps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

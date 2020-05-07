@@ -36,5 +36,6 @@
     <string name="setting">Настройки</string>
     <string name="basic">Основные</string>
     <string name="location">Геопозиция</string>
+    <string name="video">Видео</string>
 
 </resources>
