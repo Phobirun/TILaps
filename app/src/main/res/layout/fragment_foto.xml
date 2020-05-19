@@ -103,15 +103,15 @@
             android:text="@string/hdr" />
     </LinearLayout>
 
-    <TextureView
-        android:id="@+id/textureView"
+    <LinearLayout
+        android:id="@+id/textureViewContainer"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_down_mode"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_top_mode" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_top_mode"
+        android:orientation="vertical" />
 
     <LinearLayout
         android:id="@+id/linearLayout_down_mode"
@@ -121,7 +121,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_down_element"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textureView">
+        app:layout_constraintTop_toBottomOf="@+id/textureViewContainer">
 
         <LinearLayout
             android:layout_width="match_parent"

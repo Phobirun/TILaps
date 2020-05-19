@@ -37,5 +37,7 @@
     <string name="basic">Основные</string>
     <string name="location">Геопозиция</string>
     <string name="video">Видео</string>
+    <string name="coming_soon">Появится в \nследующих \nобновлениях </string>
+
 
 </resources>

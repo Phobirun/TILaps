@@ -7,11 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 
-import android.content.res.AssetFileDescriptor;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
 import android.util.Log;
@@ -25,7 +26,6 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -36,7 +36,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private static final String FILE_NAME = "Animation7529.mp4"; // ваш файл
 
     private MediaPlayer mMediaPlayer;
-    private TextureView mTextureView;
+    private LinearLayout mTextureView;
     private View fragment;
 
     //int_button
@@ -74,6 +74,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private LinearLayout linearLayout_down_mode;
     private LinearLayout linearLayout_lock;
     private LinearLayout linearLayout_text;
+
 
     private Button button_super;
     private Button button_multi;
@@ -115,8 +116,8 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     private int seekbar_wb_select = 0;
     private ArrayList<String> seekbar_wb_value = new ArrayList<>();
 
-    private CameraServiceAdapter cameraService = new CameraServiceAdapter();
-
+    //private CameraServiceAdapter cameraService = new CameraServiceAdapter();
+    Camera2RawActivity camera;
 
     private HandlerThread mBackgroundThread;
     private Handler mBackgroundHandler = null;
@@ -189,7 +190,6 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         linearLayout_text = fragment.findViewById(R.id.linearLayout_text);
 
 
-
         button_super = fragment.findViewById(R.id.button_super);
         button_super.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { onButtonClickSuper(); } });
         button_super.setEnabled(false);//not implemented
@@ -242,13 +242,18 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
 
         radioButton_iso.setChecked(true);
 
-        mTextureView = (TextureView) fragment.findViewById(R.id.textureView);
-        mTextureView.setSurfaceTextureListener(this);
+        mTextureView = (LinearLayout) fragment.findViewById(R.id.textureViewContainer);
+        camera=new Camera2RawActivity();
+
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.textureViewContainer, camera).commit();
+
+        Log.v("qwert",mTextureView.getLayoutDirection()+"");
+
+        //mTextureView.set("18:8");
 
 
-
-        cameraService.startBackgroundThread();
-        cameraService.onCreate(getActivity(), mTextureView);
+       // cameraService.startBackgroundThread();
+        //cameraService.onCreate(getActivity(), mTextureView);
 
 
         return fragment;
@@ -271,7 +276,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
             textView_down_left.setText("iso: "+seekbar_iso_value.get(seekbar_iso_select)+ "\ns: "+seekbar_s_value.get(seekbar_s_select)+ "\nwb: "+seekbar_mf_value.get(seekbar_mf_select)+ "\nwb: "+seekbar_wb_value.get(seekbar_wb_select));
             textView_down_right.setText("сделанно: \n34540\nосталось: \n345678");
             for(int i = 0; i<10;i++) {
-                cameraService.ShotCamera(int_number_camera);
+               // cameraService.ShotCamera(int_number_camera);
 
 
             }
@@ -309,9 +314,11 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
         if(int_grid == 0){
             imageButton_grid.setImageResource(R.drawable.ic_grid_true_svg);
             int_grid = 1;
+            camera.setGridLine(1);
         }else{
             imageButton_grid.setImageResource(R.drawable.ic_grid_false_svg);
             int_grid = 0;
+            camera.setGridLine(0);
         }
     }
 
@@ -386,7 +393,7 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
             imageButton_number_camera.setImageResource(R.drawable.ic_camera_icon_1_svg);
             int_number_camera = 0;
         }
-        cameraService.ChangingCamera(int_number_camera);
+       // cameraService.ChangingCamera(int_number_camera);
     }
 
     public void onImageButtonClickLockIso()
@@ -502,40 +509,79 @@ public class Fragment_foto extends Fragment implements TextureView.SurfaceTextur
     }
 
     private void GetParametrsForCamera(){
-        seekbar_iso_value.add("q");
-        seekbar_iso_value.add("w");
-        seekbar_iso_value.add("e");
-        seekbar_iso_value.add("r");
-        seekbar_iso_value.add("t");
+        seekbar_iso_value.add("50");
+        seekbar_iso_value.add("100");
+        seekbar_iso_value.add("200");
+        seekbar_iso_value.add("400");
+        seekbar_iso_value.add("640");
+        seekbar_iso_value.add("800");
+        seekbar_iso_value.add("1000");
+        seekbar_iso_value.add("1250");
+        seekbar_iso_value.add("1600");
+        seekbar_iso_value.add("2000");
+        seekbar_iso_value.add("2500");
+        seekbar_iso_value.add("3200");
         seekbar_iso_max = seekbar_iso_value.size()-1;
 
-        seekbar_s_value.add("a");
-        seekbar_s_value.add("s");
-        seekbar_s_value.add("d");
-        seekbar_s_value.add("f");
-        seekbar_s_value.add("g");
-        seekbar_s_value.add("c");
+        seekbar_s_value.add("1/4000");
+        seekbar_s_value.add("1/2000");
+        seekbar_s_value.add("1/1000");
+        seekbar_s_value.add("1/500");
+        seekbar_s_value.add("1/250");
+        seekbar_s_value.add("1/125");
+        seekbar_s_value.add("1/100");
+        seekbar_s_value.add("1/80");
+        seekbar_s_value.add("1/60");
+        seekbar_s_value.add("1/50");
+        seekbar_s_value.add("1/25");
+        seekbar_s_value.add("1/13");
         seekbar_s_max = seekbar_s_value.size()-1;
 
-        seekbar_ev_value.add("z");
-        seekbar_ev_value.add("x");
-        seekbar_ev_value.add("v");
-        seekbar_ev_value.add("b");
+        seekbar_ev_value.add("-5");
+        seekbar_ev_value.add("-4");
+        seekbar_ev_value.add("-3");
+        seekbar_ev_value.add("-2");
+        seekbar_ev_value.add("-1");
+        seekbar_ev_value.add("0");
+        seekbar_ev_value.add("1");
+        seekbar_ev_value.add("2");
+        seekbar_ev_value.add("3");
+        seekbar_ev_value.add("4");
+        seekbar_ev_value.add("5");
         seekbar_ev_max = seekbar_ev_value.size()-1;
 
-        seekbar_mf_value.add("/");
-        seekbar_mf_value.add(".");
-        seekbar_mf_value.add(",");
+        seekbar_mf_value.add("11");
+        seekbar_mf_value.add("10");
+        seekbar_mf_value.add("9");
+        seekbar_mf_value.add("8");
+        seekbar_mf_value.add("7");
+        seekbar_mf_value.add("6");
+        seekbar_mf_value.add("5");
+        seekbar_mf_value.add("4");
+        seekbar_mf_value.add("3");
+        seekbar_mf_value.add("2");
+        seekbar_mf_value.add("1");
+        seekbar_mf_value.add("0");
         seekbar_mf_max = seekbar_mf_value.size()-1;
 
-        seekbar_wb_value.add("'");
-        seekbar_wb_value.add(";");
-        seekbar_wb_value.add("l");
-        seekbar_wb_value.add("k");
-        seekbar_wb_value.add("j");
-        seekbar_wb_value.add("m");
-        seekbar_wb_value.add("n");
+        seekbar_wb_value.add("2000k");
+        seekbar_wb_value.add("2700k");
+        seekbar_wb_value.add("3300k");
+        seekbar_wb_value.add("4000k");
+        seekbar_wb_value.add("4800k");
+        seekbar_wb_value.add("5600k");
+        seekbar_wb_value.add("6300k");
+        seekbar_wb_value.add("7000k");
+        seekbar_wb_value.add("8000k");
+        seekbar_wb_value.add("9000k");
+        seekbar_wb_value.add("10000k");
+        seekbar_wb_value.add("12000k");
         seekbar_wb_max = seekbar_wb_value.size()-1;
+
+
+
+
+
 
 
 
