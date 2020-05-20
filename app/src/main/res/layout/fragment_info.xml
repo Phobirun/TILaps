@@ -1,35 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundloyout"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextViewLayoutNameTilaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_info" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/TextViewHeaderTilaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Разработчик" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView28"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="Комиссаров"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textView29"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="Сергей"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textView30"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="Дмитриевич"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                style="@style/ButtonImageTilaps"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/foto_developer" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView31"
+        style="@style/TextViewHeaderTilaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Контакты" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView32"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="email"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textView33"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="телефон"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textView34"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="instagram"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textView35"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="вконтакте"
+                android:textAlignment="viewEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView36"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="e_s.d.komissarov@mpt.ru"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:id="@+id/textView37"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="+7 (925) 345 45 32"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:id="@+id/textView40"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="instagram.com/phobirun"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:id="@+id/textView39"
+                style="@style/TextViewTilaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="vk.com/phobirun"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewHeaderTilaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="TiLaps - разработан, чтобы предоставить Вам простой способ создания TimeLapse video и TimeLapse photo."
+        android:textAlignment="center" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
-            style="@style/TextViewLayoutNameTilaps"
+            android:id="@+id/textView4"
+            style="@style/TextViewTilaps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Появится в \nтекущей \nверсии \nно позже "
+            android:layout_marginBottom="16dp"
+            android:text="@string/version"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView27"
-        style="@style/TextViewLayoutNameTilaps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/coming_soon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </LinearLayout>

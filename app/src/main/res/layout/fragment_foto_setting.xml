@@ -19,22 +19,40 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText_shot_count"
+                        style="@style/EditTextTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.4"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/nol"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        style="@style/TextViewTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:text="@string/fps" />
+
+                </LinearLayout>
+
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/button_shot_count"
                     style="@style/ButtonTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Разрешение" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    style="@style/TextViewTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="4МП 2000x2000"
-                    android:textAlignment="center" />
+                    android:text="Установить кол-во кадров" />
 
             </LinearLayout>
 
@@ -43,70 +61,41 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText_shot_interval"
+                        style="@style/EditTextTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.4"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/nol"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:text="@string/second" />
+
+                </LinearLayout>
+
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/button_shot_interval"
                     style="@style/ButtonTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Формат" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    style="@style/TextViewTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="jpeg"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button3"
-                    style="@style/ButtonTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Интервал" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    style="@style/TextViewTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="2 сек"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button"
-                    style="@style/ButtonTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Длительность" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    style="@style/TextViewTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="10 минут"
-                    android:textAlignment="center" />
+                    android:text="Установить интервал" />
 
             </LinearLayout>
 

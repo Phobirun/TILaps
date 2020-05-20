@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
@@ -16,8 +17,13 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Object activeFragmentVisible;
+    public static final String APP_PREFERENCES = "mysettings";
+    public static final String APP_PREFERENCES_COUNTER = "format";
+    private SharedPreferences mSettings;
 
+    public Object activeFragmentVisible;
+    public int shot = 10;
+    public int shotTime = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.container, new Fragment_menu()).commit();
             activeFragmentVisible = new Fragment_menu();
+            getSupportFragmentManager().beginTransaction().add(R.id.container, new Fragment_menu()).commit();
+
         }
+
         //getting camera permissions
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
                 (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
@@ -35,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         {
             requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
+
+
+
+
+
+        //setShot(100);
+        //setShotTime(1);
     }
 
 
@@ -81,6 +96,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public int getShot(){
+        return shot;
+    }
+    public void setShot(int s){
+        shot = s;
+    }
+
+    public int getShotTime(){
+        return shotTime;
+    }
+    public void setShotTime(int s){
+        shotTime = s;
+    }
+
 
     //back button
     public void onBackPressed() {

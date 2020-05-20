@@ -34,30 +34,45 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <Switch
-                    android:id="@+id/switch1"
-                    style="@style/SwitcTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/location" />
-
-                <Button
-                    android:id="@+id/button"
-                    style="@style/ButtonTilaps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Разрешение" />
-
                 <TextView
                     android:id="@+id/textView24"
                     style="@style/TextViewTilaps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="18МП 3840x2160"
+                    android:text="Формат"
                     android:textAlignment="center" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton_raw"
+                        style="@style/RadioButtonTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33333"
+                        android:text="@string/raw" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_raw_jpg"
+                        style="@style/RadioButtonTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33333"
+                        android:text="@string/raw_jpg" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_jpg"
+                        style="@style/RadioButtonTilaps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33333"
+                        android:text="@string/jpg" />
+                </RadioGroup>
 
             </LinearLayout>
 

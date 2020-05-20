@@ -36,7 +36,7 @@
     </style>
 
     <style name="ButtonTilapsMenu" parent="ButtonTilaps" >
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:layout_margin">10dp</item>
     </style>
 
@@ -50,14 +50,14 @@
 
 
     <style name="TextViewTilaps" parent="" >
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/text</item>
         <item name="android:textColorHint">@color/textHint</item>
         <item name="android:layout_margin">3dp</item>
     </style>
 
     <style name="TextViewHeaderTilaps" parent="TextViewTilaps" >
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:paddingLeft">8dp</item>
     </style>
@@ -72,10 +72,12 @@
     <style name="CheckBoxTilaps" parent="TextViewTilaps" >
         <item name="android:backgroundTint">@color/colorAccent</item>
 
+
     </style>
 
     <style name="RadioButtonTilaps" parent="TextViewTilaps" >
         <item name="android:colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="EditTextTilaps" parent="TextViewTilaps" >

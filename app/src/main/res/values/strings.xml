@@ -19,12 +19,12 @@
     <string name="fps">fps</string>
     <string name="size">Размер</string>
     <string name="mb">мб</string>
-    <string name="hdr">HDR</string>
-    <string name="super_mode">SUPER</string>
-    <string name="multi">MULTI</string>
-    <string name="raw">RAW</string>
-    <string name="raw_jpg">RAW + JPG</string>
-    <string name="jpg">JPG</string>
+    <string name="hdr">hdr</string>
+    <string name="super_mode">super</string>
+    <string name="multi">multi</string>
+    <string name="raw">raw</string>
+    <string name="raw_jpg">raw + jpg</string>
+    <string name="jpg">jpg</string>
     <string name="total_size">Итоговый размер</string>
     <string name="Lenght">Длительность</string>
     <string name="quantity_frame">Кол-во  Кадров</string>
@@ -38,6 +38,7 @@
     <string name="location">Геопозиция</string>
     <string name="video">Видео</string>
     <string name="coming_soon">Появится в \nследующих \nобновлениях </string>
+    <string name="no_support">Не поддерживается на вашем устройстве</string>
 
 
 </resources>

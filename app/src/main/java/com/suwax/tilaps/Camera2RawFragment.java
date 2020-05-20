@@ -69,7 +69,26 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Camera2RawActivity extends Fragment implements View.OnClickListener {
+public class Camera2RawFragment extends Fragment implements View.OnClickListener {
+
+    boolean rawBool = false;
+    boolean jpgBool = true;
+
+    public void setBoolJpg (boolean bool){
+        jpgBool = bool;
+    }
+    public void setBoolRaw (boolean bool){
+        rawBool = bool;
+    }
+
+    public boolean getBoolJpg (){
+        return jpgBool;
+    }
+    public boolean getBoolRaw (){
+        return rawBool;
+    }
+
+
     /**
      * Conversion from screen rotation to JPEG orientation.
      */
@@ -298,8 +317,8 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
      */
     private long mCaptureTimer;
 
-    public int mISO=100;
-    public long mExposureTime=10000000;//0.01сек
+    public int mISO=0;
+    public long mExposureTime= 0;//0.01сек
     public int mExposureCompensation = 0;
     public int mWhiteBalance = 1;
     public int mFlash = 0;
@@ -367,7 +386,9 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
 
         @Override
         public void onImageAvailable(ImageReader reader) {
-            dequeueAndSaveImage(mJpegResultQueue, mJpegImageReader);
+            if(jpgBool) {
+                dequeueAndSaveImage(mJpegResultQueue, mJpegImageReader);
+            }
         }
 
     };
@@ -381,7 +402,9 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
 
         @Override
         public void onImageAvailable(ImageReader reader) {
-            dequeueAndSaveImage(mRawResultQueue, mRawImageReader);
+            if (rawBool) {
+                dequeueAndSaveImage(mRawResultQueue, mRawImageReader);
+            }
         }
 
     };
@@ -749,6 +772,17 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
 
     }
 
+    public void setLock(int iso, long exposureTime,int whiteBalance,boolean manualFocus, double focusDistant,int exposure){
+        mExposureTime = exposureTime;
+        mISO = iso;
+        mExposureCompensation = exposure;
+        mWhiteBalance = whiteBalance;
+        mManualFocus = manualFocus;
+        mFocusDistant = focusDistant;
+        setCameraSettingCharacteristic();
+
+    }
+
     public long toNanoSec(double a){
         long b = Long.valueOf(Math.round(a * 1000000000));
         Log.v("longnano",(a * 1000000000)+" == "+b+"    ----"+a);
@@ -1029,11 +1063,16 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
             ImageSaver.ImageSaverBuilder rawBuilder = new ImageSaver.ImageSaverBuilder(activity)
                     .setCharacteristics(mCharacteristics);
 
-            mJpegResultQueue.put((int) request.getTag(), jpegBuilder);
-            mRawResultQueue.put((int) request.getTag(), rawBuilder);
+            if (jpgBool) {
+                mJpegResultQueue.put((int) request.getTag(), jpegBuilder);
+            }
+            if(rawBool) {
+                mRawResultQueue.put((int) request.getTag(), rawBuilder);
+            }
+            if(rawBool || jpgBool) {
+                mCaptureSession.capture(request, mCaptureCallback, mBackgroundHandler);
 
-            mCaptureSession.capture(request, mCaptureCallback, mBackgroundHandler);
-
+            }
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
@@ -1075,17 +1114,14 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
         try {
             // Reset the auto-focus trigger in case AF didn't run quickly enough.
             if (!mNoAFRun) {
-                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
-                        CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+               // mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+int a = 0;
+               // mPreviewRequest = mPreviewRequestBuilder.build();
+               // mCaptureSession.capture(mPreviewRequest, mPreCaptureCallback,  mBackgroundHandler);
 
-                mPreviewRequest = mPreviewRequestBuilder.build();
-                mCaptureSession.capture(mPreviewRequest, mPreCaptureCallback,
-                        mBackgroundHandler);
-
-                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
-                        CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
+               // mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
             }
-        } catch (CameraAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -1314,7 +1350,8 @@ public class Camera2RawActivity extends Fragment implements View.OnClickListener
      * longer moving, waits for auto-exposure to choose a good exposure value, and waits for
      * auto-white-balance to converge.
      */
-    private void takePicture() {
+
+    public void takePicture() {
 
         //setExposureTime(toNanoSec(exp)+1);//mExposureTime+=1;
         //setIsoChange(mISO+1);
